@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hero Page</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url("https://i.pinimg.com/1200x/28/b6/e9/28b6e924431b5f0edbbf5b6a3843a9e7.jpg") no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      padding-top: 40px; /* SPACE ADDED */
+    }
+
+    
+    marquee {
+      position: fixed;
+      top: 10px;
+      width: 100%;
+      z-index: 999;
+      color: white;
+    }
+
+    /* dark overlay */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 170px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 10px black;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      background: #ff4d4d;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff1a1a;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <marquee>
+    ACTIVITY 5 : RIVAS, SHANTHEL DALE A. <br> BSGD 3-A
+  </marquee>
+
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>野原 しんのすけ</h1>
+    <p>What could possibly go wrong? Everything.</p>
+    <button class="btn">Anyway, let’s begin.</button>
+  </div>
+
+</body>
+</html>
