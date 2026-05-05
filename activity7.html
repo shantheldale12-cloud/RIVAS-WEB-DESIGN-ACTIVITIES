@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pagination</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      font-family: Arial;
+      color: white;
+    }
+
+    marquee {
+      position: absolute;
+      top: 10px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn {
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .page {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      font-size: 16px;
+      color: #ccc;
+      transition: 0.2s;
+    }
+
+    .page.active {
+      background: red;
+      color: white;
+      font-weight: bold;
+    }
+
+    .page:hover {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<marquee>
+  ACTIVITY 7 : RIVAS, SHANTHEL DALE A. <br>
+  BSGD 3-A
+</marquee>
+
+<div class="pagination">
+  <button class="btn" onclick="prev()">&lt;</button>
+
+  <button class="page active" onclick="setPage(1)">1</button>
+  <button class="page" onclick="setPage(2)">2</button>
+  <button class="page" onclick="setPage(3)">3</button>
+  <button class="page" onclick="setPage(4)">4</button>
+  <button class="page" onclick="setPage(5)">5</button>
+
+  <button class="btn" onclick="next()">&gt;</button>
+</div>
+
+<script>
+  let current = 1;
+  const total = 5;
+
+  function setPage(page) {
+    current = page;
+    updateUI();
+  }
+
+  function prev() {
+    if (current > 1) {
+      current--;
+      updateUI();
+    }
+  }
+
+  function next() {
+    if (current < total) {
+      current++;
+      updateUI();
+    }
+  }
+
+  function updateUI() {
+    const buttons = document.querySelectorAll(".page");
+
+    buttons.forEach((btn, index) => {
+      btn.classList.remove("active");
+      if (index === current - 1) {
+        btn.classList.add("active");
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
